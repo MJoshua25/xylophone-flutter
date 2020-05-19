@@ -5,7 +5,7 @@ void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
 
-  void playSound(int fileNumber){
+  void playSound({int fileNumber}){
     final player = AudioCache();
     player.play('note$fileNumber.wav');
   }
@@ -21,7 +21,7 @@ class XylophoneApp extends StatelessWidget {
                 child: FlatButton(
                   color: Colors.red,
                   onPressed: (){
-                    playSound(1);
+                    playSound(fileNumber: 1);
                   },
                   child: Text('Click me'),
                 ),
@@ -30,7 +30,7 @@ class XylophoneApp extends StatelessWidget {
                 child: FlatButton(
                   color: Colors.orange,
                   onPressed: (){
-                    playSound(2);
+                    playSound(fileNumber: 2);
                   },
                   child: Text('Click me'),
                 ),
@@ -39,7 +39,7 @@ class XylophoneApp extends StatelessWidget {
                 child: FlatButton(
                   color: Colors.yellow,
                   onPressed: (){
-                    playSound(3);
+                    playSound(fileNumber: 3);
                   },
                   child: Text('Click me'),
                 ),
@@ -47,7 +47,7 @@ class XylophoneApp extends StatelessWidget {
                 child: FlatButton(
                   color: Colors.green,
                   onPressed: (){
-                    playSound(4);
+                    playSound(fileNumber: 4);
                   },
                   child: Text('Click me'),
                 ),
@@ -55,7 +55,7 @@ class XylophoneApp extends StatelessWidget {
                 child: FlatButton(
                   color: Colors.teal,
                   onPressed: (){
-                    playSound(5);
+                    playSound(fileNumber: 5);
                   },
                   child: Text('Click me'),
                 ),
@@ -63,7 +63,7 @@ class XylophoneApp extends StatelessWidget {
                 child: FlatButton(
                   color: Colors.blue,
                   onPressed: (){
-                    playSound(6);
+                    playSound(fileNumber: 6);
                   },
                   child: Text('Click me'),
                 ),
@@ -72,7 +72,7 @@ class XylophoneApp extends StatelessWidget {
                 child: FlatButton(
                   color: Colors.purple,
                   onPressed: (){
-                    playSound(7);
+                    playSound(fileNumber: 7);
                   },
                   child: Text('Click me'),
                 ),

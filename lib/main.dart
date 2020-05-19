@@ -4,78 +4,58 @@ import 'package:audioplayers/audio_cache.dart';
 void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
-
-  void playSound({int fileNumber}){
+  void playSound({int fileNumber}) {
     final player = AudioCache();
     player.play('note$fileNumber.wav');
+  }
+
+  Widget buildKey({Color color, int number}){
+    return Expanded(
+      child: FlatButton(
+        color: color,
+        onPressed: () {
+          playSound(fileNumber: number);
+        },
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.black,
         body: SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Expanded(
-                child: FlatButton(
-                  color: Colors.red,
-                  onPressed: (){
-                    playSound(fileNumber: 1);
-                  },
-                  child: Text('Click me'),
-                ),
+              buildKey(
+                color: Colors.red,
+                number: 1,
               ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.orange,
-                  onPressed: (){
-                    playSound(fileNumber: 2);
-                  },
-                  child: Text('Click me'),
-                ),
+              buildKey(
+                color: Colors.orange,
+                number: 2,
               ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.yellow,
-                  onPressed: (){
-                    playSound(fileNumber: 3);
-                  },
-                  child: Text('Click me'),
-                ),
-              ),Expanded(
-                child: FlatButton(
-                  color: Colors.green,
-                  onPressed: (){
-                    playSound(fileNumber: 4);
-                  },
-                  child: Text('Click me'),
-                ),
-              ),Expanded(
-                child: FlatButton(
-                  color: Colors.teal,
-                  onPressed: (){
-                    playSound(fileNumber: 5);
-                  },
-                  child: Text('Click me'),
-                ),
-              ),Expanded(
-                child: FlatButton(
-                  color: Colors.blue,
-                  onPressed: (){
-                    playSound(fileNumber: 6);
-                  },
-                  child: Text('Click me'),
-                ),
+              buildKey(
+                color: Colors.yellow,
+                number: 3,
               ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.purple,
-                  onPressed: (){
-                    playSound(fileNumber: 7);
-                  },
-                  child: Text('Click me'),
-                ),
+              buildKey(
+                color: Colors.green,
+                number: 4,
+              ),
+              buildKey(
+                color: Colors.teal,
+                number: 5,
+              ),
+              buildKey(
+                color: Colors.blue,
+                number: 6,
+              ),
+              buildKey(
+                color: Colors.purple,
+                number: 7,
               ),
             ],
           ),
